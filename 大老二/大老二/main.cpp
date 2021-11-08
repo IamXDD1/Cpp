@@ -36,7 +36,9 @@ void Run_Game(Player* player){
         {
             case 0: command();                  break;
             case 1: deal(player);               break;
-            case 2: choose_player(player);      break;
+            case 2:
+                if(deal_check) choose_player(player);
+                else std::cout<<"Does't deal yet.\n";      break;
             default: std::cout<< "Wrong Input!\nPlease Input Again.\n";
         }
     }
@@ -68,28 +70,24 @@ void deal(Player* player){
             }
         }
     }
+    std::cout<<"deal success!\n";
 }
 void output_player_card(Player* player, int player_num){
-    if(deal_check)
+
+    std::cout<<"P"<<player_num+1<<" cards: ";
+
+    for(int i = 0; i < 13; i++)
     {
-        std::cout<<"P"<<player_num+1<<" cards: ";
+        for(int k=0; k<2; k++)
+            std::cout<<player[player_num].ch_card[i][k];
 
-        for(int i = 0; i < 13; i++)
-        {
-            for(int k=0; k<2; k++)
-                std::cout<<player[player_num].ch_card[i][k];
-
-            std::cout<<" ";
-        }
-        std::cout<<"\n";
+        std::cout<<" ";
     }
-    else
-        std::cout<<"Does't deal yet.\n";
-
+    std::cout<<"\n";
 }
 void choose_player(Player* player){
     int input = 0;
-    std::cout<< "\nChoose Player (Input 1~4, 0 is back to command): P";
+    std::cout<< "\nChoose Player to check card.(Input 1~4, 0 is back to command): P";
     std::cin>> input;
     for(; input==1 || input==2 || input==3 || input==4;)
     {

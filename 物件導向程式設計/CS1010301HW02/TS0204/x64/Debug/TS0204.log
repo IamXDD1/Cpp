@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\CS1010301HW02\TS0204\Source.cpp(22,42): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\CS1010301HW02\TS0204\Source.cpp(25,46): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\CS1010301HW02\TS0204\Source.cpp(28,44): warning C4267: '=': 將 'size_t' 轉換為 'int'，資料可能遺失
+  TS0204.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\CS1010301HW02\x64\Debug\TS0204.exe

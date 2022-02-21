@@ -1,6 +1,2 @@
 ﻿  Source.cpp
-C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\TS0305\Source.cpp(126,12): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\TS0305\Source.cpp(136,12): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\TS0305\Source.cpp(146,12): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\TS0305\Source.cpp(156,12): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
   TS0305.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\x64\Debug\TS0305.exe

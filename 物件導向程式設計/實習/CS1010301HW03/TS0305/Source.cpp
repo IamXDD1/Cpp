@@ -42,7 +42,10 @@ int main()
 		else if (command == "L") {
 			int x1, y1, x2, y2;
 			std::cin >> x1 >> y1 >> x2 >> y2;
-			draw_line(map, x1, y1, x2, y2);
+
+			if (x1<0 || x2>m || y1<0 || y2>n) std::cout << "Out of range.\n\n";
+			else draw_line(map, x1, y1, x2, y2);
+
 			print_map(map);
 		}
 		else if (command == "T") {
@@ -57,7 +60,7 @@ void draw_square(char** map) {
 	std::cin >> w >> x >> y;
 
 	if (x + w > m || y + w > n) {
-		std::cout << "Out of range\n";
+		std::cout << "Out of range.\n\n";
 	}
 	else {
 		for (int i = 0; i < w; i++) {
@@ -71,9 +74,46 @@ void draw_square(char** map) {
 	return;
 }
 void draw_line(char** map, int x1, int y1, int x2, int y2) {
-	
-	
-
+	if (x2 > x1 && y2 > y1) {
+		for (int i = x1, j = y1; i <= x2 && j <= y2; i++, j++) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x2 > x1 && y1 > y2) {
+		for (int i = x1, j = y1; i <= x2 && j >= y2; i++, j--) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x1 > x2 && y2 > y1) {
+		for (int i = x1, j = y1; i >= x2 && j <= y2; i--, j++) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x1 > x2 && y1 > y2) {
+		for (int i = x1, j = y1; i >= x2 && j >= y2; i--, j--) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x1 > x2 && y1 == y2) {
+		for (int i = x1, j = y1; i >= x2; i--) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x2 > x1 && y1 == y2) {
+		for (int i = x1, j = y1; i <= x2; i++) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x1 == x2 && y1 > y2) {
+		for (int i = x1, j = y1; j >= y2; j--) {
+			map[j][i] = 'X';
+		}
+	}
+	else if (x2 == x1 && y1 < y2) {
+		for (int i = x1, j = y1; j <= y2; j++) {
+			map[j][i] = 'X';
+		}
+	}
 
 	return;
 }
@@ -84,7 +124,7 @@ void draw_triangle(char** map) {
 
 	if (dir == "LU") {
 		int temp = std::sqrt(w * w / 2);
-		if(x - temp < 0|| y - temp < 0) std::cout << "Out of range\n";
+		if(x - temp < 0|| y - temp < 0) std::cout << "Out of range.\n\n";
 		else {
 			draw_line(map, x, y, x - temp, y);
 			draw_line(map, x, y, x, y - temp);
@@ -94,7 +134,7 @@ void draw_triangle(char** map) {
 	}
 	else if (dir == "LD") {
 		int temp = std::sqrt(w * w / 2);
-		if (x - temp < 0 || y + temp > n) std::cout << "Out of range\n";
+		if (x - temp < 0 || y + temp > n) std::cout << "Out of range.\n\n";
 		else {
 			draw_line(map, x, y, x - temp, y);
 			draw_line(map, x, y, x, y + temp);
@@ -104,7 +144,7 @@ void draw_triangle(char** map) {
 	}
 	else if (dir == "RU") {
 		int temp = std::sqrt(w * w / 2);
-		if (x + temp < 0 || y - temp < 0) std::cout << "Out of range\n";
+		if (x + temp < 0 || y - temp < 0) std::cout << "Out of range.\n\n";
 		else {
 			draw_line(map, x, y, x + temp, y);
 			draw_line(map, x, y, x, y - temp);
@@ -114,7 +154,7 @@ void draw_triangle(char** map) {
 	}
 	else if (dir == "RD") {
 		int temp = std::sqrt(w * w / 2);
-		if (x + temp < 0 || y + temp < 0) std::cout << "Out of range\n";
+		if (x + temp < 0 || y + temp < 0) std::cout << "Out of range.\n\n";
 		else {
 			draw_line(map, x, y, x + temp, y);
 			draw_line(map, x, y, x, y + temp);

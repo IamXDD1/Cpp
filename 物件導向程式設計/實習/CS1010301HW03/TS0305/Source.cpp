@@ -116,6 +116,7 @@ void draw_line(char** map, int x1, int y1, int x2, int y2) {
 		}
 	}
 	else if (x1 == x2 && y1 == y2) map[y1][x1] = 'X';
+	else map[0][0] = 'E';
 
 	return;
 }

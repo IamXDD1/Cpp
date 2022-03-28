@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW07\TS0705\main.cpp(55,27): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW07\TS0705\main.cpp(56,2): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW07\TS0705\main.cpp(110): warning C4715: 'index': 不是所有控制路徑都傳回值
+  TS0705.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW07\x64\Debug\TS0705.exe

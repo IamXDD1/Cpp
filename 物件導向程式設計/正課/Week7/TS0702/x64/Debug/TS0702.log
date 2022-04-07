@@ -1,0 +1,4 @@
+﻿  Atoi.cpp
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\CS3005301HW07\TS0702\Atoi.cpp(21,52): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\CS3005301HW07\TS0702\Atoi.cpp(22,25): warning C4267: 'return': 將 'size_t' 轉換為 'int'，資料可能遺失
+  TS0702.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\CS3005301HW07\x64\Debug\TS0702.exe

@@ -1,2 +1,0 @@
-﻿  Source.cpp
-C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\TS0304\Source.cpp : fatal error C1041: 無法開啟程式資料庫 'C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW03\TS0304\x64\Debug\vc142.pdb'; 如果要將多個 CL.EXE 寫到同一個 .PDB 檔案，請使用 /FS

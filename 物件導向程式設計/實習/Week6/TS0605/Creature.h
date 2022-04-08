@@ -1,27 +1,27 @@
 #pragma once
+#include <iostream>
+#include <vector>
 #include <string>
 #include <map>
-#include <algorithm>
-#include <vector>
 #include "Diary.h"
+
 class Creature {
-protected:
-	std::string status;
+	std::vector<std::string> status;
 	std::vector<std::string> log;
-	std::map<std::string, int> bodyPart;
-	std::string cname;
+	std::map<std::string, int> body;
+	std::string name;
 	std::string curr_body;
-	int day_index;
+	int index;
 public:
 	Creature(std::string name);
-	Creature(std::string name, Creature base);
+	Creature(std::string name, Creature a);
 
-	void updateDay();
+	void updatedate();
 	void PrintStatus();
 	void PrintLog();
 
-	Creature& operator[](std::string body);
-	Creature& operator=(int num);
-	Creature& operator+=(int num);
-	Creature& operator-=(int num);
+	Creature& operator[](std::string bodypart);
+	Creature operator=(int num);
+	Creature operator+=(int num);
+	Creature operator-=(int num);
 };

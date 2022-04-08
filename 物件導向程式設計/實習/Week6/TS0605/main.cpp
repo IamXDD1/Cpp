@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Diary.h"
 #include "Creature.h"
 
@@ -14,8 +15,6 @@ int main() {
 
 	Diary::NewDay("0227");
 	unknownA["leg"] = 0;
-	unknownA["leg"] -= -2;
-	unknownA["leg"] = 2;
 	unknownA.PrintStatus();
 	unknownB.PrintLog();
 
@@ -25,4 +24,3 @@ int main() {
 	unknownA.PrintLog();
 
 }
-

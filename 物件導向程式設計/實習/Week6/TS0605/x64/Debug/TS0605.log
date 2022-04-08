@@ -1,2 +1,3 @@
 ﻿  Creature.cpp
-  TS0605.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\CS1010301HW06\x64\Debug\TS0605.exe
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\Week6\TS0605\Creature.cpp(10,1): warning C4267: '正在初始化': 將 'size_t' 轉換為 'int'，資料可能遺失
+  TS0605.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\Week6\x64\Debug\TS0605.exe

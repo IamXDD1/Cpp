@@ -1,110 +1,115 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include <map>
-#include <algorithm>
 #include "Creature.h"
-#include "Diary.h"
 
-Creature::Creature(std::string name) : cname(name) {
-	log.push_back(name + "'s log:\n");
-	status = name + "'s status:\n";
-	day_index = Diary::date_index-1;
-	updateDay();
-}
-Creature::Creature(std::string name, Creature base) : cname(name), bodyPart(base.bodyPart), curr_body(base.curr_body){
-	base.updateDay();
-	log.push_back(name + "'s log:\n");
-	status = name + "'s status:\n";
-	day_index = base.day_index-1;
-	updateDay();
+std::vector<std::string> Diary::date;
+
+Creature::Creature(std::string name) : name(name), index(Diary::date.size()-1)
+{
+	status.push_back(name + "'s status:\n");
+	log.push_back(name+"'s log:\n");
+	updatedate();
 }
 
-void Creature::updateDay() {
-	for (;day_index != Diary::full_date.size(); day_index++) {
-		log.push_back("Day " + Diary::full_date[day_index] + "\n");
+Creature::Creature(std::string name, Creature a) : name(name), body(a.body)
+{
+	a.updatedate();
+	status.push_back(name + "'s status:\n");
+	log.push_back(name + "'s log:\n");
+	index = a.index - 1;
+	updatedate();
+}
+
+void Creature::updatedate() 
+{
+	for (; index != Diary::date.size(); index++) {
+		log.push_back("Day " + Diary::date[index] + "\n");
 	}
 }
-void Creature::PrintStatus() {
-	std::cout << status;
-	for (auto const& body : bodyPart) {
-		if (bodyPart[body.first] != 0) std::cout << body.first << " * " << body.second << '\n';
+
+void Creature::PrintStatus()
+{
+	updatedate();
+	std::cout << status[0];
+	for (auto const& a : body) {
+		if(a.second != 0) std::cout << a.first << " * " << a.second<< '\n';
 	}
 	std::cout << '\n';
-	return;
-}
-void Creature::PrintLog() {
-	updateDay();
-	for (auto const& record : log) std::cout << record;
-	std::cout << '\n';
-	return;
 }
 
-Creature& Creature::operator[](std::string body) {
-	curr_body = body;
+void Creature::PrintLog()
+{
+	updatedate();
+	for (int i = 0; i < log.size(); i++) {
+		std::cout << log[i];
+	}
+	std::cout << '\n';
+}
+
+Creature& Creature::operator[](std::string bodypart)
+{
+	updatedate();
+	curr_body = bodypart;
 	return *this;
 }
-Creature& Creature::operator=(int num) {
-	updateDay();
-	
-	if (bodyPart[curr_body] != num) {
-		if (bodyPart[curr_body] == 0) {
-			if (num != 0) {
-				log.push_back(cname + "'s " + curr_body + " appeared (0 -> " + std::to_string(num) + ").\n");
-			}
+
+Creature Creature::operator=(int num)
+{
+	updatedate();
+	if (body[curr_body] != num) {
+		if (body[curr_body] == 0) {
+			log.push_back(name + "'s " + curr_body + " appeared (0 -> "
+				+ std::to_string(num) + ").\n");
 		}
-		else if (bodyPart[curr_body] > num) {
-			log.push_back(cname + "'s " + curr_body +
-				" decreased (" + std::to_string(bodyPart[curr_body]) + " -> " + std::to_string(num) + ").\n");
+		else if (num > body[curr_body]) {
+			log.push_back(name+"'s "+curr_body+" increased ("+
+			std::to_string(body[curr_body])+" -> "+std::to_string(num)+").\n");
 		}
-		else {
-			log.push_back(cname + "'s " + curr_body +
-				" increased (" + std::to_string(bodyPart[curr_body]) + " -> " + std::to_string(num) + ").\n");
+		else if (num < body[curr_body]) {
+			log.push_back(name + "'s " + curr_body + " decreased ("+
+				std::to_string(body[curr_body]) + " -> " + std::to_string(num) + ").\n");
 		}
-		bodyPart[curr_body] = num;
+		body[curr_body] = num;
 	}
 	return *this;
 }
-Creature& Creature::operator+=(int num) {
-	updateDay();
-	if (num != 0) {
-		if (num > 0) {
-			if (bodyPart[curr_body] == 0) {
-				log.push_back(cname + "'s " + curr_body + " appeared (0 -> " + std::to_string(num) + ").\n");
-			}
-			else {
-				log.push_back(cname + "'s " + curr_body +
-					" increased (" + std::to_string(bodyPart[curr_body]) + " -> "
-					+ std::to_string(bodyPart[curr_body] + num) + ").\n");
-			}
-		}
-		else {
-			log.push_back(cname + "'s " + curr_body +
-				" decreased (" + std::to_string(bodyPart[curr_body]) + " -> "
-				+ std::to_string(bodyPart[curr_body] + num) + ").\n");
-		}
-		bodyPart[curr_body] += num;
+
+Creature Creature::operator+=(int num)
+{
+	updatedate();
+	if (num > 0) {
+		if(body[curr_body] != 0)
+			log.push_back(name + "'s " + curr_body + " increased (" +
+				std::to_string(body[curr_body]) + " -> " + std::to_string(num + body[curr_body]) + ").\n");
+		else
+			log.push_back(name + "'s " + curr_body + " appeared (0 -> "
+				+ std::to_string(num) + ").\n");
 	}
+	else if (num < 0) {
+		log.push_back(name + "'s " + curr_body + " decreased (" +
+			std::to_string(body[curr_body]) + " -> " + std::to_string(num + body[curr_body]) + ").\n");
+	}
+	body[curr_body] += num;
 	return *this;
 }
-Creature& Creature::operator-=(int num) {
-	updateDay();
-	if (num != 0) {
-		if (num < 0) {
-			if (bodyPart[curr_body] == 0) {
-				log.push_back(cname + "'s " + curr_body + " appeared (0 -> " + std::to_string(-num) + ").\n");
-			}
-			else {
-				log.push_back(cname + "'s " + curr_body +
-					" increased (" + std::to_string(bodyPart[curr_body]) + " -> "
-					+ std::to_string(bodyPart[curr_body] - num) + ").\n");
-			}
-		}
-		else {
-			log.push_back(cname + "'s " + curr_body +
-				" decreased (" + std::to_string(bodyPart[curr_body]) + " -> "
-				+ std::to_string(bodyPart[curr_body] - num) + ").\n");
-		}
-		bodyPart[curr_body] -= num;
+
+Creature Creature::operator-=(int num)
+{
+	updatedate();
+	if (num < 0) {
+		if(body[curr_body] != 0)
+			log.push_back(name + "'s " + curr_body + " increased (" +
+				std::to_string(body[curr_body]) + " -> " + std::to_string(body[curr_body] - num) + ").\n");
+		else
+			log.push_back(name + "'s " + curr_body + " appeared (0 -> "
+				+ std::to_string(-num) + ").\n");
 	}
+	else if (num > 0) {
+		log.push_back(name + "'s " + curr_body + " decreased (" +
+			std::to_string(body[curr_body]) + " -> " + std::to_string(body[curr_body] - num) + ").\n");
+	}
+	body[curr_body] -= num;
 	return *this;
 }

@@ -1,10 +1,12 @@
 #pragma once
-#include <string>
 #include <vector>
+#include <string>
+
 class Diary {
-	static std::string date;
 public:
-	static int date_index;
-	static std::vector<std::string> full_date;
-	static void NewDay(std::string day);
+	static std::vector<std::string> date;
+	static void NewDay(std::string day) {
+		date.push_back(day);
+	}
 };
+

@@ -1,0 +1,24 @@
+﻿  Recorder.cpp
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\11002SOOPMidtermTestQ3\1102OOPMidterm03\Recorder.cpp(52,22): warning C4244: '=': 將 'int' 轉換為 '_Ty2'，由於類型不同，可能導致資料遺失
+          with
+          [
+              _Ty2=float
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\utility(193,54): warning C4244: '正在初始化': 將 'int' 轉換為 '_Ty2'，由於類型不同，可能導致資料遺失
+          with
+          [
+              _Ty2=float
+          ]
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\11002SOOPMidtermTestQ3\1102OOPMidterm03\Recorder.cpp(57): message : 請參考正在進行編譯的函式 樣板 具現化 'std::pair<std::string,float>::pair<std::string&,int&,0>(_Other1,_Other2) noexcept(false)'
+          with
+          [
+              _Other1=std::string &,
+              _Other2=int &
+          ]
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\11002SOOPMidtermTestQ3\1102OOPMidterm03\Recorder.cpp(57): message : 請參考正在進行編譯的函式 樣板 具現化 'std::pair<std::string,float>::pair<std::string&,int&,0>(_Other1,_Other2) noexcept(false)'
+          with
+          [
+              _Other1=std::string &,
+              _Other2=int &
+          ]
+  1102OOPMidterm03.vcxproj -> C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\實習\11002SOOPMidtermTestQ3\x64\Debug\1102OOPMidterm03.exe

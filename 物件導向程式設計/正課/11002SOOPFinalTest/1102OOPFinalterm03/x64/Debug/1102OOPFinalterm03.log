@@ -1,0 +1,2 @@
+﻿main.obj : error LNK2019: 在函式 "public: int __cdecl Counter<int>::total(void)" (?total@?$Counter@H@@QEAAHXZ)main 中參考了無法解析的外部符號
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\x64\Debug\1102OOPFinalterm03.exe : fatal error LNK1120: 1 個無法解析的外部符號

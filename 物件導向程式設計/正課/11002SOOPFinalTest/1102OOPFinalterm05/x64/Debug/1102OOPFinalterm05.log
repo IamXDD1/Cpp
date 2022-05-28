@@ -1,0 +1,9 @@
+﻿  main.cpp
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(17,1): error C2027: 使用未定義類型 'Product'
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(10): message : 請參閱 'Product' 的宣告
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(18,1): error C2027: 使用未定義類型 'Product'
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(10): message : 請參閱 'Product' 的宣告
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(23,8): error C2027: 使用未定義類型 'Product'
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(10): message : 請參閱 'Product' 的宣告
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(25,1): error C2027: 使用未定義類型 'Product'
+C:\Users\XDD\Desktop\資工\程式語言\Cpp\物件導向程式設計\正課\11002SOOPFinalTest\1102OOPFinalterm05\Store.h(10): message : 請參閱 'Product' 的宣告
